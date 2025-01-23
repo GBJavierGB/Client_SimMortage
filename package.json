@@ -1,0 +1,12 @@
+{
+  "name": "client_simmortage",
+  "version": "1.0.0",
+  "description": "Prueba tecnica Roams Back-end",
+  "license": "ISC",
+  "author": "Javier Gonzalez Blanco",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
