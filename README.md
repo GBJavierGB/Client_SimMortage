@@ -1,5 +1,4 @@
-# Client_SimMortage
-## Prueba técnica Romas Back-end
+# Prueba técnica Roams Back-end
 
 El objetivo de esta prueba es crear una API RESTful que permita realizar simulaciones de hipotecas para diferentes clientes.
 
