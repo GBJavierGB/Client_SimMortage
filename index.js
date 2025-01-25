@@ -4,7 +4,8 @@ const back = express()
 back.use(express.json());
 
 const sqlite = require('sqlite3');
-const db = new sqlite.Database('./database/Client_SimMortage.db');
+const db = new sqlite.Database('./database/Client_SimMortgage.db');
+db.run("PRAGMA foreign_keys = ON");
 
 
 back.post('/api/client', (request, response) => {
@@ -20,7 +21,7 @@ back.post('/api/client', (request, response) => {
           } else if (err.message.includes("NOT NULL constraint failed")) {
             return response.status(400).json({ error: "Todos los campos son obligatorios." });
           } else {
-            return response.status(500).json({ error: "Error desconocido en la base de datos." });
+            return response.status(500).json({ error: "Error desconocido en la base de datos.", details: err.message });
           }
         }
         response.json({ message: "Cliente agregado correctamente", id: this.lastID });
@@ -135,7 +136,7 @@ back.post('/api/sim_mortgage', (request, response) => {
     return response.status(400).json({ message: "DNI no es correcto" });
   }
 
-  if (!TAE) {
+  if (TAE === undefined || TAE === null) {
     return response.status(400).json({ error: "El TAE es obligatorio" });
   } 
   
@@ -143,7 +144,7 @@ back.post('/api/sim_mortgage', (request, response) => {
     return response.status(400).json({ error: "El TAE tiene que ser mayor que 0" });
   }
 
-  if (!amort_time) {
+  if (amort_time === undefined || amort_time === null) {
     return response.status(400).json({ error: "El tiempo de amortización es obligatorio" });
   }
 
@@ -231,7 +232,7 @@ function verify_dni (DNI) {
 
 }
 
-const PORT = 3001
+const PORT = 3000
 back.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`)
 })

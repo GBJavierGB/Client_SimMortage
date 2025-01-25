@@ -1,4 +1,4 @@
-.open Client_SimMortage.db
+.open Client_SimMortgage.db
 
 CREATE TABLE IF NOT EXISTS clients(
     DNI TEXT PRIMARY KEY, 

@@ -18,7 +18,7 @@ Para crear la base de datos se ha utilizado docker. Se ha utilizado una imagen c
 2. **Para crear la base de datos:**
 
    ```bash
-   docker run --rm -v "./database:/workspace" -w /workspace --user $(id -u):$(id -g) keinos/sqlite3 sqlite3 -cmd ".read /workspace/create_db_Client_SimMortage.sql"
+   docker run --rm -v "./database:/workspace" -w /workspace --user $(id -u):$(id -g) keinos/sqlite3 sqlite3 -cmd ".read /workspace/create_db_Client_SimMortgage.sql"
 
 ### Instalacion de dependencias y ejecución de la API
 
@@ -31,3 +31,6 @@ Para crear la base de datos se ha utilizado docker. Se ha utilizado una imagen c
 
     ```bash
     npm run dev
+
+3. **Documentación de la API**
+La documentación de la API se ha realizado en POSTMAN, se ha exportado la colección de peticiones en **Client_SimMortgage.postman_collection.json**.
