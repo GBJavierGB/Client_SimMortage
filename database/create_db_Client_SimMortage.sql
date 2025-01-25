@@ -17,5 +17,3 @@ CREATE TABLE IF NOT EXISTS sim_mortgage (
     total_import REAL NOT NULL,
     FOREIGN KEY (DNI) REFERENCES clients(DNI) ON DELETE CASCADE
 );
-
-INSERT INTO clients VALUES ('73426895Q', 'Javier', 'javier@gmail.com', 500)
